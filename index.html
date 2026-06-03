@@ -15,17 +15,12 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 :root{
 --black:#030303;
 --dark:#080808;
 --surface:#111;
---surface2:#181818;
 --gold:#d4af37;
 --gold2:#f5d77b;
 --blue:#52dfff;
@@ -33,9 +28,7 @@ box-sizing:border-box;
 --muted:#b8b8b8;
 }
 
-html{
-scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth;}
 
 body{
 font-family:'Barlow',sans-serif;
@@ -58,8 +51,6 @@ background-size:60px 60px;
 pointer-events:none;
 z-index:-1;
 }
-
-/* NAV */
 
 .navbar{
 position:fixed;
@@ -86,9 +77,7 @@ text-decoration:none;
 text-transform:uppercase;
 }
 
-.nav-logo span{
-color:var(--gold);
-}
+.nav-logo span{color:var(--gold);}
 
 .nav-links{
 display:flex;
@@ -106,17 +95,13 @@ text-decoration:none;
 transition:.3s;
 }
 
-.nav-links a:hover{
-color:var(--gold);
-}
+.nav-links a:hover{color:var(--gold);}
 
 .nav-btn{
 border:1px solid var(--gold);
 padding:9px 18px;
 color:var(--gold)!important;
 }
-
-/* HERO */
 
 .hero{
 min-height:100vh;
@@ -271,11 +256,7 @@ margin:10px auto 0;
 animation:scrollLine 2s infinite;
 }
 
-/* SECTIONS */
-
-section{
-padding:100px 8%;
-}
+section{padding:100px 8%;}
 
 .section-head{
 text-align:center;
@@ -300,9 +281,7 @@ letter-spacing:.04em;
 color:white;
 }
 
-.section-title span{
-color:var(--gold);
-}
+.section-title span{color:var(--gold);}
 
 .section-text{
 color:var(--muted);
@@ -311,11 +290,7 @@ line-height:1.8;
 margin-top:20px;
 }
 
-/* ABOUT */
-
-.about{
-background:#050505;
-}
+.about{background:#050505;}
 
 .about-box{
 display:grid;
@@ -368,11 +343,7 @@ color:var(--gold);
 letter-spacing:.12em;
 }
 
-/* SERVICES */
-
-.services{
-background:#080808;
-}
+.services{background:#080808;}
 
 .grid{
 display:grid;
@@ -399,9 +370,7 @@ transform:translateX(-100%);
 transition:.6s;
 }
 
-.card:hover::before{
-transform:translateX(100%);
-}
+.card:hover::before{transform:translateX(100%);}
 
 .card:hover{
 transform:translateY(-8px);
@@ -423,16 +392,14 @@ color:var(--muted);
 line-height:1.8;
 }
 
-/* PROJECT */
-
-.project{
+.anniversary-section{
 background:
 linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
 radial-gradient(circle at center,rgba(212,175,55,.18),transparent 50%);
 text-align:center;
 }
 
-.project-box{
+.anniversary-box{
 max-width:1000px;
 margin:auto;
 border:1px solid rgba(212,175,55,.25);
@@ -442,7 +409,7 @@ background:rgba(255,255,255,.03);
 box-shadow:0 0 80px rgba(212,175,55,.08);
 }
 
-.project-number{
+.anniversary-number{
 font-family:'Orbitron',sans-serif;
 font-size:clamp(3rem,8vw,7rem);
 font-weight:900;
@@ -451,11 +418,7 @@ line-height:1;
 animation:float 4s ease-in-out infinite;
 }
 
-/* STATS */
-
-.stats{
-background:#050505;
-}
+.stats{background:#050505;}
 
 .stats-grid{
 display:grid;
@@ -485,11 +448,7 @@ letter-spacing:.12em;
 text-transform:uppercase;
 }
 
-/* PORTFOLIO */
-
-.portfolio{
-background:#080808;
-}
+.portfolio{background:#080808;}
 
 .video-grid{
 display:grid;
@@ -517,9 +476,7 @@ font-size:3rem;
 color:white;
 }
 
-.video-card div:last-child{
-padding:22px;
-}
+.video-card div:last-child{padding:22px;}
 
 .video-card h3{
 font-family:'Orbitron',sans-serif;
@@ -533,11 +490,7 @@ color:var(--muted);
 line-height:1.7;
 }
 
-/* CONTACT */
-
-.contact{
-background:#050505;
-}
+.contact{background:#050505;}
 
 .contact-box{
 max-width:900px;
@@ -556,8 +509,6 @@ gap:18px;
 flex-wrap:wrap;
 margin-top:35px;
 }
-
-/* FOOTER */
 
 footer{
 padding:35px 8%;
@@ -581,8 +532,6 @@ color:var(--blue);
 letter-spacing:.1em;
 }
 
-/* FLOAT WHATSAPP */
-
 .whatsapp{
 position:fixed;
 right:22px;
@@ -602,8 +551,6 @@ box-shadow:0 0 30px rgba(37,211,102,.45);
 animation:whatsPulse 2s infinite;
 }
 
-/* REVEAL */
-
 .reveal{
 opacity:0;
 transform:translateY(35px);
@@ -615,19 +562,9 @@ opacity:1;
 transform:translateY(0);
 }
 
-/* ANIMATIONS */
-
 @keyframes logoReveal{
-0%{
-opacity:0;
-transform:translateY(60px) scale(.85);
-filter:blur(25px);
-}
-100%{
-opacity:1;
-transform:translateY(0) scale(1);
-filter:blur(0);
-}
+0%{opacity:0;transform:translateY(60px) scale(.85);filter:blur(25px);}
+100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
 }
 
 @keyframes shine{
@@ -636,40 +573,19 @@ filter:blur(0);
 }
 
 @keyframes fadeUp{
-0%{
-opacity:0;
-transform:translateY(35px);
-}
-100%{
-opacity:1;
-transform:translateY(0);
-}
+0%{opacity:0;transform:translateY(35px);}
+100%{opacity:1;transform:translateY(0);}
 }
 
 @keyframes pulseGlow{
-0%,100%{
-opacity:.6;
-transform:translateX(-50%) scale(1);
-}
-50%{
-opacity:1;
-transform:translateX(-50%) scale(1.1);
-}
+0%,100%{opacity:.6;transform:translateX(-50%) scale(1);}
+50%{opacity:1;transform:translateX(-50%) scale(1.1);}
 }
 
 @keyframes scrollLine{
-0%{
-transform:scaleY(0);
-opacity:0;
-}
-50%{
-transform:scaleY(1);
-opacity:1;
-}
-100%{
-transform:scaleY(0);
-opacity:0;
-}
+0%{transform:scaleY(0);opacity:0;}
+50%{transform:scaleY(1);opacity:1;}
+100%{transform:scaleY(0);opacity:0;}
 }
 
 @keyframes float{
@@ -683,55 +599,21 @@ opacity:0;
 100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
 }
 
-/* RESPONSIVE */
-
 @media(max-width:900px){
-.nav-links{
-display:none;
-}
-
-.about-box{
-grid-template-columns:1fr;
-}
-
-.hero-title{
-font-size:clamp(3rem,15vw,5.5rem);
-}
-
-footer{
-text-align:center;
-justify-content:center;
-}
+.nav-links{display:none;}
+.about-box{grid-template-columns:1fr;}
+.hero-title{font-size:clamp(3rem,15vw,5.5rem);}
+footer{text-align:center;justify-content:center;}
 }
 
 @media(max-width:600px){
-.navbar{
-padding:18px 6%;
-}
-
-section{
-padding:80px 6%;
-}
-
-.hero{
-padding-top:110px;
-}
-
-.hero-buttons{
-flex-direction:column;
-}
-
-.btn{
-width:100%;
-}
-
-.about-card{
-padding:28px;
-}
-
-.project-box{
-padding:40px 22px;
-}
+.navbar{padding:18px 6%;}
+section{padding:80px 6%;}
+.hero{padding-top:110px;}
+.hero-buttons{flex-direction:column;}
+.btn{width:100%;}
+.about-card{padding:28px;}
+.anniversary-box{padding:40px 22px;}
 }
 
 </style>
@@ -745,7 +627,7 @@ padding:40px 22px;
 
 <ul class="nav-links">
 <li><a href="#servicios">Servicios</a></li>
-<li><a href="#proyecto">84 Historias</a></li>
+<li><a href="#aniversario">10 Aniversario</a></li>
 <li><a href="#portafolio">Portafolio</a></li>
 <li><a href="#contacto" class="nav-btn">Cotizar</a></li>
 </ul>
@@ -755,33 +637,27 @@ padding:40px 22px;
 
 <div class="hero-content">
 
-<p class="anniversary">
-10 Aniversario
-</p>
+<p class="anniversary">10 Aniversario</p>
 
 <h1 class="hero-title">
 Aero<span>Selfie</span>
 </h1>
 
-<p class="hero-subtitle">
-Producciones
-</p>
+<p class="hero-subtitle">Producciones</p>
 
 <p class="hero-text">
-10 años aterrizando ideas y elevando historias desde Hidalgo.
+10 años produciendo historias que inspiran, conectan y permanecen.
 Producción audiovisual profesional para gobierno, turismo, empresas, eventos y contenido digital.
 </p>
 
 <div class="hero-buttons">
 <a href="#portafolio" class="btn btn-primary">Ver Portafolio</a>
-<a href="#contacto" class="btn btn-secondary">Solicitar Cotización</a>
+<a href="https://wa.me/527712149117?text=Hola%20AeroSelfie%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" class="btn btn-secondary">Solicitar Cotización</a>
 </div>
 
 </div>
 
-<div class="scroll">
-Explorar
-</div>
+<div class="scroll">Explorar</div>
 
 </header>
 
@@ -851,24 +727,27 @@ Producción visual pensada para emocionar, posicionar y convertir.
 
 </section>
 
-<section class="project reveal" id="proyecto">
+<section class="anniversary-section reveal" id="aniversario">
 
-<div class="project-box">
+<div class="anniversary-box">
 
-<p class="tag">Proyecto insignia 2026</p>
+<p class="tag">10 Aniversario</p>
 
-<div class="project-number">84</div>
+<div class="anniversary-number">10</div>
 
 <h2 class="section-title">
-Municipios · 84 Historias · <span>1 Hidalgo</span>
+Años creando <span>historias visuales</span>
 </h2>
 
 <p class="section-text">
-Un proyecto para documentar la riqueza cultural, turística, histórica y humana de cada municipio del estado.
-La meta: convertir a AeroSelfie en la marca visual de Hidalgo.
+Durante una década hemos trabajado con gobiernos, empresas, marcas, eventos y destinos turísticos,
+transformando ideas en contenido audiovisual de alto impacto.
+Nuestro compromiso sigue siendo el mismo: crear producciones que inspiren, conecten y generen resultados.
 </p>
 
-<a href="#contacto" class="btn btn-primary">Sumar mi municipio</a>
+<a href="https://wa.me/527712149117?text=Hola%20AeroSelfie%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" class="btn btn-primary">
+Solicitar Cotización
+</a>
 
 </div>
 
@@ -889,18 +768,18 @@ La meta: convertir a AeroSelfie en la marca visual de Hidalgo.
 </div>
 
 <div class="stat">
-<div class="stat-num" data-target="84">0</div>
-<p>Municipios por documentar</p>
-</div>
-
-<div class="stat">
-<div class="stat-num" data-target="1000">0</div>
-<p>Ideas aterrizadas</p>
+<div class="stat-num" data-target="500">0</div>
+<p>Producciones realizadas</p>
 </div>
 
 <div class="stat">
 <div class="stat-num" data-target="360">0</div>
 <p>Perspectiva visual</p>
+</div>
+
+<div class="stat">
+<div class="stat-num" data-target="100">0</div>
+<p>Historias por crear</p>
 </div>
 
 </div>
@@ -946,12 +825,8 @@ Una muestra del tipo de contenido que AeroSelfie puede crear para marcas, gobier
 </div>
 
 <div style="text-align:center;margin-top:45px;">
-<a href="https://www.youtube.com/@aeroselfieproducciones7767" target="_blank" class="btn btn-secondary">
-Ver YouTube
-</a>
-<a href="https://www.instagram.com/aeroselfieproducciones/" target="_blank" class="btn btn-primary">
-Ver Instagram
-</a>
+<a href="https://www.youtube.com/@aeroselfieproducciones7767" target="_blank" class="btn btn-secondary">Ver YouTube</a>
+<a href="https://www.instagram.com/aeroselfieproducciones/" target="_blank" class="btn btn-primary">Ver Instagram</a>
 </div>
 
 </section>
@@ -971,17 +846,9 @@ Cuéntanos qué necesitas producir y te ayudamos a aterrizar la idea con una pro
 </p>
 
 <div class="social-links">
-<a href="https://www.instagram.com/aeroselfieproducciones/" target="_blank" class="btn btn-secondary">
-Instagram
-</a>
-
-<a href="https://www.youtube.com/@aeroselfieproducciones7767" target="_blank" class="btn btn-secondary">
-YouTube
-</a>
-
-<a href="https://wa.me/52TU_NUMERO?text=Hola%20AeroSelfie%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n" target="_blank" class="btn btn-primary">
-WhatsApp
-</a>
+<a href="https://www.instagram.com/aeroselfieproducciones/" target="_blank" class="btn btn-secondary">Instagram</a>
+<a href="https://www.youtube.com/@aeroselfieproducciones7767" target="_blank" class="btn btn-secondary">YouTube</a>
+<a href="https://wa.me/527712149117?text=Hola%20AeroSelfie%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" class="btn btn-primary">WhatsApp</a>
 </div>
 
 </div>
@@ -990,21 +857,15 @@ WhatsApp
 
 <footer>
 
-<div class="footer-brand">
-AEROSELFIE PRODUCCIONES
-</div>
+<div class="footer-brand">AEROSELFIE PRODUCCIONES</div>
 
-<p>
-© 2026 · 10 Aniversario
-</p>
+<p>© 2026 · 10 Aniversario</p>
 
-<p>
-Aterricemos las ideas
-</p>
+<p>Aterricemos las ideas</p>
 
 </footer>
 
-<a class="whatsapp" href="https://wa.me/52TU_NUMERO?text=Hola%20AeroSelfie%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n" target="_blank">
+<a class="whatsapp" href="https://wa.me/527712149117?text=Hola%20AeroSelfie%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n." target="_blank">
 ✆
 </a>
 
@@ -1045,10 +906,12 @@ if(count < target){
 counter.textContent = Math.ceil(count);
 requestAnimationFrame(update);
 }else{
-if(target === 1000){
-counter.textContent = "1000+";
+if(target === 500){
+counter.textContent = "500+";
 }else if(target === 360){
 counter.textContent = "360°";
+}else if(target === 100){
+counter.textContent = "100+";
 }else{
 counter.textContent = target;
 }
@@ -1066,3 +929,4 @@ window.addEventListener('scroll',startCounters);
 
 </body>
 </html>
+
