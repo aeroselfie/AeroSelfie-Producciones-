@@ -1,991 +1,238 @@
-<!DOCTYPE html>
-
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AeroSelfie Producciones | 10 Aniversario</title>
-
-<meta name="description" content="AeroSelfie Producciones. Producción audiovisual profesional, drones, fotografía aérea, turismo, gobierno, eventos y contenido digital en Hidalgo y México.">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;600;700&family=Barlow+Condensed:wght@400;600;700&family=Orbitron:wght@500;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-
-*{margin:0;padding:0;box-sizing:border-box;}
-
-:root{
---black:#030303;
---dark:#080808;
---surface:#111;
---gold:#d4af37;
---gold2:#f5d77b;
---blue:#52dfff;
---text:#ffffff;
---muted:#b8b8b8;
-}
-
-html{scroll-behavior:smooth;}
-
-body{
-font-family:'Barlow',sans-serif;
-background:
-radial-gradient(circle at top,rgba(82,223,255,.12),transparent 35%),
-radial-gradient(circle at bottom,rgba(212,175,55,.10),transparent 30%),
-#030303;
-color:var(--text);
-overflow-x:hidden;
-}
-
-body::before{
-content:"";
-position:fixed;
-inset:0;
-background-image:
-linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
-background-size:60px 60px;
-pointer-events:none;
-z-index:-1;
-}
-
-.navbar{
-position:fixed;
-top:0;
-left:0;
-right:0;
-z-index:99;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:22px 7%;
-background:rgba(0,0,0,.55);
-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(212,175,55,.12);
-}
-
-.nav-logo{
-font-family:'Orbitron',sans-serif;
-font-weight:900;
-letter-spacing:.08em;
-font-size:1.1rem;
-color:var(--blue);
-text-decoration:none;
-text-transform:uppercase;
-}
-
-.nav-logo span{color:var(--gold);}
-
-.nav-links{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-.nav-links a{
-font-family:'Barlow Condensed',sans-serif;
-letter-spacing:.15em;
-font-size:.85rem;
-text-transform:uppercase;
-color:#ddd;
-text-decoration:none;
-transition:.3s;
-}
-
-.nav-links a:hover{color:var(--gold);}
-
-.nav-btn{
-border:1px solid var(--gold);
-padding:9px 18px;
-color:var(--gold)!important;
-}
-
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:120px 8% 80px;
-position:relative;
-overflow:hidden;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:700px;
-height:700px;
-background:radial-gradient(circle,rgba(82,223,255,.18),transparent 65%);
-top:10%;
-left:50%;
-transform:translateX(-50%);
-filter:blur(20px);
-animation:pulseGlow 6s ease-in-out infinite;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(to bottom,rgba(0,0,0,.15),#030303 95%);
-pointer-events:none;
-}
-
-.hero-content{
-position:relative;
-z-index:2;
-max-width:1100px;
-}
-
-.anniversary{
-font-family:'Barlow Condensed',sans-serif;
-letter-spacing:.45em;
-text-transform:uppercase;
-color:var(--gold2);
-font-size:.85rem;
-margin-bottom:25px;
-animation:fadeUp 1s ease both;
-}
-
-.hero-title{
-font-family:'Orbitron',sans-serif;
-font-weight:900;
-font-size:clamp(3rem,9vw,8rem);
-line-height:.95;
-text-transform:uppercase;
-letter-spacing:.03em;
-background:linear-gradient(90deg,#ffffff,#52dfff,#d4af37,#ffffff);
-background-size:300% 100%;
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-animation:logoReveal 1.7s ease both, shine 6s linear infinite;
-filter:drop-shadow(0 0 25px rgba(82,223,255,.25));
-}
-
-.hero-title span{
-display:block;
-font-size:.78em;
-}
-
-.hero-subtitle{
-margin-top:25px;
-font-size:clamp(1.2rem,3vw,2rem);
-font-family:'Barlow Condensed',sans-serif;
-letter-spacing:.18em;
-text-transform:uppercase;
-color:var(--gold);
-animation:fadeUp 1s .5s ease both;
-}
-
-.hero-text{
-max-width:720px;
-margin:28px auto 0;
-font-size:1.1rem;
-line-height:1.8;
-color:var(--muted);
-animation:fadeUp 1s .7s ease both;
-}
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
-margin-top:40px;
-animation:fadeUp 1s .9s ease both;
-}
-
-.btn{
-display:inline-block;
-padding:16px 30px;
-font-family:'Barlow Condensed',sans-serif;
-letter-spacing:.16em;
-text-transform:uppercase;
-font-weight:700;
-text-decoration:none;
-border-radius:4px;
-transition:.3s;
-}
-
-.btn-primary{
-background:var(--gold);
-color:#000;
-box-shadow:0 0 30px rgba(212,175,55,.25);
-}
-
-.btn-primary:hover{
-background:var(--gold2);
-transform:translateY(-4px);
-}
-
-.btn-secondary{
-border:1px solid rgba(255,255,255,.35);
-color:white;
-}
-
-.btn-secondary:hover{
-border-color:var(--blue);
-color:var(--blue);
-transform:translateY(-4px);
-}
-
-.scroll{
-position:absolute;
-bottom:30px;
-left:50%;
-transform:translateX(-50%);
-z-index:3;
-font-family:'Barlow Condensed',sans-serif;
-letter-spacing:.25em;
-font-size:.7rem;
-color:#777;
-text-transform:uppercase;
-}
-
-.scroll::after{
-content:"";
-display:block;
-width:1px;
-height:45px;
-background:linear-gradient(var(--gold),transparent);
-margin:10px auto 0;
-animation:scrollLine 2s infinite;
-}
-
-section{padding:100px 8%;}
-
-.section-head{
-text-align:center;
-max-width:850px;
-margin:0 auto 60px;
-}
-
-.tag{
-font-family:'Barlow Condensed',sans-serif;
-letter-spacing:.35em;
-text-transform:uppercase;
-color:var(--blue);
-font-size:.8rem;
-margin-bottom:16px;
-}
-
-.section-title{
-font-family:'Orbitron',sans-serif;
-font-size:clamp(2rem,5vw,4rem);
-text-transform:uppercase;
-letter-spacing:.04em;
-color:white;
-}
-
-.section-title span{color:var(--gold);}
-
-.section-text{
-color:var(--muted);
-font-size:1.05rem;
-line-height:1.8;
-margin-top:20px;
-}
-
-.about{background:#050505;}
-
-.about-box{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:40px;
-align-items:center;
-}
-
-.about-card{
-background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-border:1px solid rgba(212,175,55,.18);
-padding:40px;
-border-radius:18px;
-box-shadow:0 0 50px rgba(0,0,0,.4);
-}
-
-.about-card h3{
-font-family:'Orbitron',sans-serif;
-font-size:1.7rem;
-color:var(--gold);
-margin-bottom:18px;
-}
-
-.about-card p{
-color:var(--muted);
-line-height:1.9;
-}
-
-.about-visual{
-min-height:380px;
-border-radius:18px;
-background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.75)),
-url("https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80");
-background-size:cover;
-background-position:center;
-border:1px solid rgba(82,223,255,.22);
-position:relative;
-overflow:hidden;
-}
-
-.about-visual::after{
-content:"10 ANIVERSARIO";
-position:absolute;
-bottom:25px;
-left:25px;
-font-family:'Orbitron',sans-serif;
-font-size:1.6rem;
-color:var(--gold);
-letter-spacing:.12em;
-}
-
-.services{background:#080808;}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:22px;
-}
-
-.card{
-background:linear-gradient(145deg,#111,#070707);
-border:1px solid rgba(255,255,255,.08);
-padding:30px;
-border-radius:18px;
-position:relative;
-overflow:hidden;
-transition:.35s;
-}
-
-.card::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,transparent,rgba(82,223,255,.08),transparent);
-transform:translateX(-100%);
-transition:.6s;
-}
-
-.card:hover::before{transform:translateX(100%);}
-
-.card:hover{
-transform:translateY(-8px);
-border-color:rgba(212,175,55,.4);
-box-shadow:0 20px 60px rgba(0,0,0,.5);
-}
-
-.card h3{
-font-family:'Orbitron',sans-serif;
-color:var(--gold);
-font-size:1.05rem;
-text-transform:uppercase;
-margin-bottom:15px;
-letter-spacing:.08em;
-}
-
-.card p{
-color:var(--muted);
-line-height:1.8;
-}
-
-.anniversary-section{
-background:
-linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.9)),
-radial-gradient(circle at center,rgba(212,175,55,.18),transparent 50%);
-text-align:center;
-}
-
-.anniversary-box{
-max-width:1000px;
-margin:auto;
-border:1px solid rgba(212,175,55,.25);
-padding:55px 40px;
-border-radius:20px;
-background:rgba(255,255,255,.03);
-box-shadow:0 0 80px rgba(212,175,55,.08);
-}
-
-.anniversary-number{
-font-family:'Orbitron',sans-serif;
-font-size:clamp(3rem,8vw,7rem);
-font-weight:900;
-color:var(--gold);
-line-height:1;
-animation:float 4s ease-in-out infinite;
-}
-
-.stats{background:#050505;}
-
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-text-align:center;
-}
-
-.stat{
-background:#111;
-padding:35px 20px;
-border-radius:16px;
-border:1px solid rgba(255,255,255,.08);
-}
-
-.stat-num{
-font-family:'Orbitron',sans-serif;
-font-size:3rem;
-color:var(--blue);
-font-weight:900;
-}
-
-.stat p{
-color:var(--muted);
-font-family:'Barlow Condensed',sans-serif;
-letter-spacing:.12em;
-text-transform:uppercase;
-}
-
-.portfolio{background:#080808;}
-
-.video-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:24px;
-}
-
-.video-card{
-background:#111;
-border-radius:16px;
-overflow:hidden;
-border:1px solid rgba(255,255,255,.08);
-}
-
-.video-thumb{
-height:210px;
-display:flex;
-align-items:center;
-justify-content:center;
-background:
-linear-gradient(135deg,rgba(82,223,255,.25),rgba(212,175,55,.18)),
-#111;
-font-family:'Orbitron',sans-serif;
-font-size:3rem;
-color:white;
-}
-
-.video-card div:last-child{padding:22px;}
-
-.video-card h3{
-font-family:'Orbitron',sans-serif;
-font-size:1rem;
-color:var(--gold);
-margin-bottom:10px;
-}
-
-.video-card p{
-color:var(--muted);
-line-height:1.7;
-}
-
-.contact{background:#050505;}
-
-.contact-box{
-max-width:900px;
-margin:auto;
-text-align:center;
-background:linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.02));
-border:1px solid rgba(212,175,55,.22);
-padding:50px 30px;
-border-radius:22px;
-}
-
-.social-links{
-display:flex;
-justify-content:center;
-gap:18px;
-flex-wrap:wrap;
-margin-top:35px;
-}
-
-footer{
-padding:35px 8%;
-background:#000;
-border-top:1px solid rgba(212,175,55,.15);
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:20px;
-flex-wrap:wrap;
-}
-
-footer p{
-color:#777;
-font-size:.9rem;
-}
-
-.footer-brand{
-font-family:'Orbitron',sans-serif;
-color:var(--blue);
-letter-spacing:.1em;
-}
-
-.whatsapp{
-position:fixed;
-right:22px;
-bottom:22px;
-z-index:100;
-background:#25D366;
-color:white;
-width:58px;
-height:58px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-font-size:1.6rem;
-text-decoration:none;
-box-shadow:0 0 30px rgba(37,211,102,.45);
-animation:whatsPulse 2s infinite;
+export const company = {
+  name: 'AeroSelfie Producciones',
+  shortName: 'AeroSelfie',
+  location: 'Hidalgo, México',
+  city: 'Pachuca de Soto, Hidalgo',
+  tagline: 'Aterricemos las ideas.',
+  description:
+    'Una década elevando la perspectiva visual y aterrizando historias de marcas, instituciones y comunidades desde el cielo.',
+  email: 'contacto@aeroselfie.mx',
+  phone: '+52 (771) 214 9117',
+  whatsapp: '5217712149117',
+  whatsappMessage:
+    'Hola AeroSelfie, me gustaría cotizar un proyecto audiovisual.',
+}
+
+export const navLinks = [
+  { label: 'Reel', href: '#reel' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Trayectoria', href: '#trayectoria' },
+  { label: 'Casos de éxito', href: '#proyectos' },
+  { label: 'Contacto', href: '#contacto' },
+]
+
+export const stats = [
+  {
+    value: '10',
+    suffix: '',
+    label: 'Años de experiencia',
+  },
+  {
+    value: '500',
+    suffix: '+',
+    label: 'Producciones realizadas',
+  },
+  {
+    value: '50',
+    suffix: '+',
+    label: 'Clientes atendidos',
+  },
+  {
+    value: '100',
+    suffix: '%',
+    label: 'Compromiso creativo',
+  },
+]
+
+export const services = [
+  {
+    id: 'drone',
+    title: 'Drone cinematográfico',
+    description:
+      'Tomas aéreas con estabilización profesional, movimientos fluidos y gradación de color para cine, publicidad, turismo y documentales.',
+    tag: 'Aéreo · Cine',
+  },
+  {
+    id: 'audiovisual',
+    title: 'Producción audiovisual',
+    description:
+      'Rodaje, dirección y postproducción integral: desde el guion hasta la entrega final para formatos digitales, institucionales y comerciales.',
+    tag: 'Producción',
+  },
+  {
+    id: 'turismo',
+    title: 'Turismo',
+    description:
+      'Destinos, hoteles, pueblos mágicos y experiencias contadas desde perspectivas visuales que invitan a viajar y descubrir Hidalgo.',
+    tag: 'Turismo',
+  },
+  {
+    id: 'gobierno',
+    title: 'Gobierno',
+    description:
+      'Cobertura institucional, informes, campañas de comunicación pública y documentación de acciones con narrativa profesional.',
+    tag: 'Institucional',
+  },
+  {
+    id: 'eventos',
+    title: 'Eventos',
+    description:
+      'Conciertos, deportes, corporativos, sociales y eventos públicos con cobertura multicámara, fotografía, video y tomas aéreas.',
+    tag: 'Eventos',
+  },
+  {
+    id: 'redes',
+    title: 'Redes sociales',
+    description:
+      'Reels, spots verticales y contenido optimizado para TikTok, Instagram, Facebook y YouTube con ritmo editorial premium.',
+    tag: 'Social',
+  },
+]
+
+export const timeline = [
+  {
+    year: '2016',
+    title: 'El despegue',
+    description:
+      'Nace AeroSelfie en Hidalgo con la visión de llevar la producción audiovisual a nuevas alturas.',
+  },
+  {
+    year: '2017',
+    title: 'Primeros vuelos',
+    description:
+      'Primeros proyectos comerciales, cobertura de eventos y producción de contenido local.',
+  },
+  {
+    year: '2018',
+    title: 'Turismo aéreo',
+    description:
+      'AeroSelfie comienza a documentar destinos, paisajes y experiencias turísticas desde una nueva perspectiva.',
+  },
+  {
+    year: '2019',
+    title: 'Sector público',
+    description:
+      'Inicio de proyectos gubernamentales, comunicación institucional e informes audiovisuales.',
+  },
+  {
+    year: '2020',
+    title: 'Era digital',
+    description:
+      'Expansión hacia contenido para redes sociales, formatos verticales y producción digital ágil.',
+  },
+  {
+    year: '2021',
+    title: 'Calidad cinematográfica',
+    description:
+      'Mejora del flujo de trabajo, edición, fotografía, color y narrativa visual.',
+  },
+  {
+    year: '2022',
+    title: 'Eventos y cobertura',
+    description:
+      'Cobertura de eventos sociales, deportivos, culturales, empresariales y gubernamentales.',
+  },
+  {
+    year: '2023',
+    title: 'Marca audiovisual',
+    description:
+      'Consolidación del portafolio con proyectos para marcas, instituciones, turismo y campañas.',
+  },
+  {
+    year: '2024',
+    title: 'Alianzas estratégicas',
+    description:
+      'Colaboraciones con municipios, instituciones, empresas, agencias y proyectos regionales.',
+  },
+  {
+    year: '2026',
+    title: '10 años aterrizando ideas',
+    description:
+      'Una década creando historias visuales para gobiernos, turismo, empresas y marcas desde Hidalgo para México.',
+  },
+]
+
+export const projects = [
+  {
+    id: 'zempoala',
+    category: 'Turismo',
+    title: 'Turismo Zempoala',
+    description:
+      'Promoción turística con narrativa visual, drone cinematográfico y edición enfocada en identidad local.',
+    video: 'https://www.youtube.com/embed/L9rmDEq1Dkw',
+    year: '2026',
+    span: 'large',
+    featured: true,
+  },
+  {
+    id: 'institucional',
+    category: 'Institucional',
+    title: 'Demo Institucional',
+    description:
+      'Contenido audiovisual para instituciones, empresas y proyectos que necesitan comunicar con autoridad.',
+    video: 'https://www.youtube.com/embed/6tC9w0oPOmc',
+    year: '2026',
+    span: 'normal',
+  },
+  {
+    id: 'reel',
+    category: 'Producción',
+    title: 'Demo Reel',
+    description:
+      'Una muestra del lenguaje visual de AeroSelfie: ritmo, drone, edición y mirada cinematográfica.',
+    video: 'https://www.youtube.com/embed/GRKNrksT7JY',
+    year: '2026',
+    span: 'normal',
+  },
+  {
+    id: 'gobierno',
+    category: 'Gobierno',
+    title: 'Comunicación Pública',
+    description:
+      'Producción audiovisual para informes, campañas institucionales y comunicación de alto impacto.',
+    video: 'https://www.youtube.com/embed/6tC9w0oPOmc',
+    year: '2026',
+    span: 'normal',
+  },
+  {
+    id: 'eventos',
+    category: 'Eventos',
+    title: 'Cobertura Multicámara',
+    description:
+      'Cobertura profesional para eventos sociales, empresariales, culturales y gubernamentales.',
+    video: 'https://www.youtube.com/embed/GRKNrksT7JY',
+    year: '2026',
+    span: 'normal',
+  },
+  {
+    id: 'drone',
+    category: 'Drone cinematográfico',
+    title: 'Perspectivas Aéreas',
+    description:
+      'Tomas aéreas para turismo, eventos, marcas, gobierno e industria con tratamiento cinematográfico.',
+    video: 'https://www.youtube.com/embed/L9rmDEq1Dkw',
+    year: '2026',
+    span: 'normal',
+  },
+]
+
+export const socials = [
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/aeroselfieproducciones/',
+  },
+  {
+    name: 'YouTube',
+    href: 'https://www.youtube.com/@aeroselfieproducciones7767',
+  },
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/aeroselfieproducciones',
+  },
+]
+
+export function whatsappUrl() {
+  const text = encodeURIComponent(company.whatsappMessage)
+  return `https://wa.me/${company.whatsapp}?text=${text}`
 }
-
-.reveal{
-opacity:0;
-transform:translateY(35px);
-transition:1s ease;
-}
-
-.reveal.visible{
-opacity:1;
-transform:translateY(0);
-}
-
-@keyframes logoReveal{
-0%{opacity:0;transform:translateY(60px) scale(.85);filter:blur(25px);}
-100%{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
-}
-
-@keyframes shine{
-0%{background-position:0% 50%;}
-100%{background-position:300% 50%;}
-}
-
-@keyframes fadeUp{
-0%{opacity:0;transform:translateY(35px);}
-100%{opacity:1;transform:translateY(0);}
-}
-
-@keyframes pulseGlow{
-0%,100%{opacity:.6;transform:translateX(-50%) scale(1);}
-50%{opacity:1;transform:translateX(-50%) scale(1.1);}
-}
-
-@keyframes scrollLine{
-0%{transform:scaleY(0);opacity:0;}
-50%{transform:scaleY(1);opacity:1;}
-100%{transform:scaleY(0);opacity:0;}
-}
-
-@keyframes float{
-0%,100%{transform:translateY(0);}
-50%{transform:translateY(-12px);}
-}
-
-@keyframes whatsPulse{
-0%{box-shadow:0 0 0 0 rgba(37,211,102,.6);}
-70%{box-shadow:0 0 0 18px rgba(37,211,102,0);}
-100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
-}
-
-@media(max-width:900px){
-.nav-links{display:none;}
-.about-box{grid-template-columns:1fr;}
-.hero-title{font-size:clamp(3rem,15vw,5.5rem);}
-footer{text-align:center;justify-content:center;}
-}
-
-@media(max-width:600px){
-.navbar{padding:18px 6%;}
-section{padding:80px 6%;}
-.hero{padding-top:110px;}
-.hero-buttons{flex-direction:column;}
-.btn{width:100%;}
-.about-card{padding:28px;}
-.anniversary-box{padding:40px 22px;}
-}
-
-</style>
-
-</head>
-
-<body>
-
-<nav class="navbar">
-<a href="#inicio" class="nav-logo">AERO<span>SELFIE</span></a>
-
-<ul class="nav-links">
-<li><a href="#servicios">Servicios</a></li>
-<li><a href="#aniversario">10 Aniversario</a></li>
-<li><a href="#portafolio">Portafolio</a></li>
-<li><a href="#contacto" class="nav-btn">Cotizar</a></li>
-</ul>
-</nav>
-
-<header class="hero" id="inicio">
-
-<div class="hero-content">
-
-<p class="anniversary">10 Aniversario</p>
-
-<h1 class="hero-title">
-Aero<span>Selfie</span>
-</h1>
-
-<p class="hero-subtitle">Producciones</p>
-
-<p class="hero-text">
-10 años produciendo historias que inspiran, conectan y permanecen.
-Producción audiovisual profesional para gobierno, turismo, empresas, eventos y contenido digital.
-</p>
-
-<div class="hero-buttons">
-<a href="#portafolio" class="btn btn-primary">Ver Portafolio</a>
-<a href="https://wa.me/527712149117?text=Hola%20AeroSelfie%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" class="btn btn-secondary">Solicitar Cotización</a>
-</div>
-
-</div>
-
-<div class="scroll">Explorar</div>
-
-</header>
-
-<section class="about reveal">
-
-<div class="about-box">
-
-<div class="about-card">
-<p class="tag">Desde Hidalgo para México</p>
-<h3>Una década contando historias visuales</h3>
-<p>
-AeroSelfie Producciones transforma ideas en contenido audiovisual de alto impacto.
-Creamos piezas para marcas, instituciones, municipios, campañas, turismo, eventos y redes sociales.
-Combinamos estrategia, creatividad, drones, fotografía, video y postproducción profesional.
-</p>
-</div>
-
-<div class="about-visual"></div>
-
-</div>
-
-</section>
-
-<section class="services reveal" id="servicios">
-
-<div class="section-head">
-<p class="tag">Lo que hacemos</p>
-<h2 class="section-title">Servicios <span>AeroSelfie</span></h2>
-<p class="section-text">
-Producción visual pensada para emocionar, posicionar y convertir.
-</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>Producción Audiovisual</h3>
-<p>Spots, documentales, informes, videos institucionales, comerciales y contenido cinematográfico.</p>
-</div>
-
-<div class="card">
-<h3>Drones y Filmación Aérea</h3>
-<p>Tomas aéreas profesionales para turismo, gobierno, inmuebles, eventos, campo e industria.</p>
-</div>
-
-<div class="card">
-<h3>Turismo </h3>
-<p>Promoción visual de municipios, pueblos mágicos, experiencias, rutas y paisajes de Hidalgo.</p>
-</div>
-
-<div class="card">
-<h3>Gobierno e Informes</h3>
-<p>Comunicación pública, campañas institucionales, informes de gobierno y contenido político profesional.</p>
-</div>
-
-<div class="card">
-<h3>Eventos</h3>
-<p>Cobertura audiovisual de eventos sociales, empresariales, deportivos, culturales y gubernamentales.</p>
-</div>
-
-<div class="card">
-<h3>Redes Sociales</h3>
-<p>Reels, cápsulas, campañas de contenido, storytelling y piezas optimizadas para Instagram, TikTok y Facebook.</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="anniversary-section reveal" id="aniversario">
-
-<div class="anniversary-box">
-
-<p class="tag">10 Aniversario</p>
-
-<div class="anniversary-number">10</div>
-
-<h2 class="section-title">
-Años creando <span>historias visuales</span>
-</h2>
-
-<p class="section-text">
-Durante una década hemos trabajado con gobiernos, empresas, marcas, eventos y destinos turísticos,
-transformando ideas en contenido audiovisual de alto impacto.
-Nuestro compromiso sigue siendo el mismo: crear producciones que inspiren, conecten y generen resultados.
-</p>
-
-<a href="https://wa.me/527712149117?text=Hola%20AeroSelfie%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" class="btn btn-primary">
-Solicitar Cotización
-</a>
-
-</div>
-
-</section>
-
-<section class="stats reveal">
-
-<div class="section-head">
-<p class="tag">Trayectoria</p>
-<h2 class="section-title">10 años <span>elevando historias</span></h2>
-</div>
-
-<div class="stats-grid">
-
-<div class="stat">
-<div class="stat-num" data-target="10">0</div>
-<p>Años de experiencia</p>
-</div>
-
-<div class="stat">
-<div class="stat-num" data-target="500">0</div>
-<p>Producciones realizadas</p>
-</div>
-
-<div class="stat">
-<div class="stat-num" data-target="360">0</div>
-<p>Perspectiva visual</p>
-</div>
-
-<div class="stat">
-<div class="stat-num" data-target="100">0</div>
-<p>Historias por crear</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="portfolio reveal" id="portafolio">
-
-<section class="portfolio reveal" id="portafolio">
-
-<div class="section-head">
-<p class="tag">Nuestro trabajo</p>
-
-<h2 class="section-title">
-Portafolio <span>Audiovisual</span>
-</h2>
-
-<p class="section-text">
-Conoce algunos de los proyectos que han formado parte de la historia de AeroSelfie Producciones.
-</p>
-</div>
-
-<div class="video-grid">
-
-<div class="video-card">
-
-<iframe
-width="100%"
-height="250"
-src="https://www.youtube.com/embed/L9rmDEq1Dkw"
-title="Produccion Institucional"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
-
-<div>
-<h3>Video Institucional</h3>
-
-<p>
-Producción audiovisual para promoción turística y experiencias visuales de alto impacto.
-</p>
-</div>
-
-</div>
-
-<div class="video-card">
-
-<iframe
-width="100%"
-height="250"
-src="https://www.youtube.com/embed/6tC9w0oPOmc"
-title="Video Turistico"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
-
-<div>
-<h3>Producción Turistico</h3>
-
-<p>
-Contenido profesional para instituciones, empresas y proyectos estratégicos.
-</p>
-</div>
-
-</div>
-
-<div class="video-card">
-
-<iframe
-width="100%"
-height="250"
-src="https://www.youtube.com/embed/GRKNrksT7JY"
-title="DEMO"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-allowfullscreen>
-</iframe>
-
-<div>
-<h3>DEMO</h3>
-
-<p>
-Filmación aérea profesional con calidad cinematográfica para turismo, gobierno y marcas.
-</p>
-</div>
-
-</div>
-
-</div>
-
-<div style="text-align:center;margin-top:45px;">
-
-<a href="https://www.youtube.com/@aeroselfieproducciones7767"
-target="_blank"
-class="btn btn-secondary">
-Ver Canal de YouTube </a>
-
-<a href="https://www.instagram.com/aeroselfieproducciones/"
-target="_blank"
-class="btn btn-primary">
-Ver Instagram </a>
-
-</div>
-
-</section>
-
-
-</section>
-
-<section class="contact reveal" id="contacto">
-
-<div class="contact-box">
-
-<p class="tag">Hablemos de tu proyecto</p>
-
-<h2 class="section-title">
-Solicita una <span>Cotización</span>
-</h2>
-
-<p class="section-text">
-Cuéntanos qué necesitas producir y te ayudamos a aterrizar la idea con una propuesta visual profesional.
-</p>
-
-<div class="social-links">
-<a href="https://www.instagram.com/aeroselfieproducciones/" target="_blank" class="btn btn-secondary">Instagram</a>
-<a href="https://www.youtube.com/@aeroselfieproducciones7767" target="_blank" class="btn btn-secondary">YouTube</a>
-<a href="https://wa.me/527712149117?text=Hola%20AeroSelfie%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" class="btn btn-primary">WhatsApp</a>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<div class="footer-brand">AEROSELFIE PRODUCCIONES</div>
-
-<p>© 2026 · 10 Aniversario</p>
-
-<p>Aterricemos las ideas</p>
-
-</footer>
-
-<a class="whatsapp" href="https://wa.me/527712149117?text=Hola%20AeroSelfie%2C%20me%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n." target="_blank">
-✆
-</a>
-
-<script>
-
-const revealElements = document.querySelectorAll('.reveal');
-
-const revealObserver = new IntersectionObserver((entries)=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add('visible');
-}
-});
-},{threshold:.15});
-
-revealElements.forEach(el=>revealObserver.observe(el));
-
-const counters = document.querySelectorAll('.stat-num');
-let counterStarted = false;
-
-function startCounters(){
-if(counterStarted) return;
-
-const statsSection = document.querySelector('.stats');
-const position = statsSection.getBoundingClientRect().top;
-
-if(position < window.innerHeight - 100){
-counterStarted = true;
-
-counters.forEach(counter=>{
-const target = +counter.getAttribute('data-target');
-let count = 0;
-const speed = target / 80;
-
-function update(){
-count += speed;
-if(count < target){
-counter.textContent = Math.ceil(count);
-requestAnimationFrame(update);
-}else{
-if(target === 500){
-counter.textContent = "500+";
-}else if(target === 360){
-counter.textContent = "360°";
-}else if(target === 100){
-counter.textContent = "100+";
-}else{
-counter.textContent = target;
-}
-}
-}
-
-update();
-});
-}
-}
-
-window.addEventListener('scroll',startCounters);
-
-</script>
-
-</body>
 </html>
